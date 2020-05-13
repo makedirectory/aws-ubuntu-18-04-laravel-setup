@@ -2,7 +2,7 @@
 
 # Setup .env file
 printf "\nYou've got to setup the .env file\n"
-cd ~/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com
+cd ~/"$SUBDOMAIN""$DOMAIN".com
 
 # Set App Name
 echo -n "What is the App Name? "
@@ -37,7 +37,7 @@ echo "App Name Set"
 
 APP_ENV=production
 APP_DEBUG=false
-APP_URL=https://"'"$SUBDOMAIN"'""'"$DOMAIN"'".com
+APP_URL=https://"$SUBDOMAIN""$DOMAIN".com
 LOG_CHANNEL=stack
 CACHE_DRIVER=file
 SESSION_LIFETIME=120
@@ -92,7 +92,7 @@ LOG_CHANNEL=$LOG_CHANNEL
 
 SESSION_DRIVER=$SESSION_DRIVER
 QUEUE_DRIVER=$QUEUE_DRIVER
-" > /var/www/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com/.env
+" > /var/www/"$SUBDOMAIN""$DOMAIN".com/.env
 RESULT=$?
 if [ "$RESULT" -eq 0 ]; then
     printf "\n.evn generated\n"
@@ -107,7 +107,7 @@ if [ $ADDMONGORESPONSE == 'Y' ]; then
     DBCONNECTION=$DBCONNECTION
     DATABASEDSN=\"$DATABASEDSN\"
     DATABASENAME=$DATABASENAME
-    " >> /var/www/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com/.env
+    " >> /var/www/"$SUBDOMAIN""$DOMAIN".com/.env
     RESULT=$?
     if [ "$RESULT" -eq 0 ]; then
         printf "\nMongoDB Added to .env\n"
@@ -128,7 +128,7 @@ if [ $ADDAWSS3RESPONSE == 'Y' ]; then
     AWSBUCKET=$AWSBUCKET
     AWSCFURL=\"$AWSCFURL\"
     AWSMIXCFURL=\"$AWSMIXCFURL\"
-    " >> /var/www/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com/.env
+    " >> /var/www/"$SUBDOMAIN""$DOMAIN".com/.env
     RESULT=$?
     if [ "$RESULT" -eq 0 ]; then
         printf "\nAWS S3 Bucket Added to .env\n"
@@ -145,7 +145,7 @@ if [ $ADDAWSSESRESPONSE == 'Y' ]; then
 
     SESKEY=$SESKEY
     SESKEYSECRET=\"$SESKEYSECRET\"
-    " >> /var/www/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com/.env
+    " >> /var/www/"$SUBDOMAIN""$DOMAIN".com/.env
     RESULT=$?
     if [ "$RESULT" -eq 0 ]; then
         printf "\nAWS SES Keys Added to .env\n"
@@ -163,7 +163,7 @@ if [ $ADDTWILIORESPONSE == 'Y' ]; then
     TWILIOSID=$TWILIOSID
     TWILIOTOKEN=$TWILIOTOKEN
     TWILIONUMBER=\"$TWILIONUMBER\"
-    " >> /var/www/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com/.env
+    " >> /var/www/"$SUBDOMAIN""$DOMAIN".com/.env
     RESULT=$?
     if [ "$RESULT" -eq 0 ]; then
         printf "\nTwilio Keys Added to .env\n"

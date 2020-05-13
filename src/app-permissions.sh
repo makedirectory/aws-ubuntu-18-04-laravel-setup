@@ -3,11 +3,11 @@
 # File permissions
 printf "\nSetting file permssions\n"
 
-sudo chown -R ubuntu:www-data /var/www/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com
-sudo chmod -R 775 /var/www/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com
-sudo chown -R www-data:www-data /var/www/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com/storage
+sudo chown -R ubuntu:www-data /var/www/"$SUBDOMAIN""$DOMAIN".com
+sudo chmod -R 775 /var/www/"$SUBDOMAIN""$DOMAIN".com
+sudo chown -R www-data:www-data /var/www/"$SUBDOMAIN""$DOMAIN".com/storage
 # sudo chown -R $USER /usr/local
-# cd /var/www/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com
+# cd /var/www/"$SUBDOMAIN""$DOMAIN".com
 # chmod -R a+x node_modules
 printf "\nDone setting file permssions\n"
 

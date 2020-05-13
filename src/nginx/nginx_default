@@ -2,7 +2,7 @@ server {
 	listen 80 default_server;
 	listen [::]:80;
 
-	root /var/www/SUBDOMAIN.DOMAIN.com/public;
+	root /var/www/SUBDOMAINDOMAIN.com/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-XSS-Protection "1; mode=block";
@@ -11,7 +11,7 @@ server {
 	# Add index.php to the list if you are using PHP
 	index index.html index.php index.htm index.nginx-debian.html;
 
-	server_name SUBDOMAIN.DOMAIN.com www.SUBDOMAIN.DOMAIN.com;
+	server_name SUBDOMAINDOMAIN.com www.SUBDOMAINDOMAIN.com;
 
 	location / {
 		try_files $uri $uri/ /index.php?$query_string;

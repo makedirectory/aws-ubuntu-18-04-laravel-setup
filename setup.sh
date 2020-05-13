@@ -113,7 +113,7 @@ else
 fi
 
 # Move repo
-sudo mv ~/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com /var/www/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com
+sudo mv ~/"$SUBDOMAIN""$DOMAIN".com /var/www/"$SUBDOMAIN""$DOMAIN".com
 RESULT=$?
 if [ "$RESULT" -eq 0 ]; then
     printf "\nRepo moved successfully\n"
@@ -122,7 +122,7 @@ else
 fi
 
 # Generates a key for the .env file - must be added before `php artisan config:cache is run`
-cd /var/www/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com
+cd /var/www/"$SUBDOMAIN""$DOMAIN".com
 composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 php artisan key:generate
 RESULT=$?
@@ -143,7 +143,7 @@ else
 fi
 
 # TODO: Update config/app.php
-# 'url' => env('APP_URL', 'http://localhost'), => 'url' => env('APP_URL', 'https://"'"$SUBDOMAIN"'""'"$DOMAIN"'".com'),
+# 'url' => env('APP_URL', 'http://localhost'), => 'url' => env('APP_URL', 'https://"$SUBDOMAIN""$DOMAIN".com'),
 
 # Set File Permissions
 bash app-permissions.sh

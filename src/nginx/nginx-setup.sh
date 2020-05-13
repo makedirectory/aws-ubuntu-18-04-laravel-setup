@@ -9,7 +9,7 @@ sudo sed -i s/SUBDOMAIN/${SUBDOMAIN}/g /etc/nginx/sites-available/default
 sudo sed -i s/DOMAIN/${DOMAIN}/g /etc/nginx/sites-available/default
 
 cat /etc/nginx/sites-available/default
-sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/"'"$SUBDOMAIN"'""'"$DOMAIN"'".com
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/"$SUBDOMAIN""$DOMAIN".com
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 sudo nginx -t
