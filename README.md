@@ -2,30 +2,32 @@
 
 Linux NGINX MongoDB(Optional) PHP Server
 
-###  RoadMap
+##  RoadMap
 
-# Reporting
-[] Add Sentury Support
-[] Add SPLUNK Support
+### Reporting
+- [ ] Add Sentury Support
+- [ ] Add SPLUNK Support
 
-# Databases
-[] Add MySQL Support
+### Databases
+- [ ] Add MySQL Support
 
-# Software
-[] Make Node Optional
-[] Make Laravel/Composer Optional
-[] Make PHP Optional
-[] Add React Support
-[] Add Ruby Support (via RVM)
-[] Add Python Support (via virtualenv(Optional), pipenv(Optional), & pyenv)
+### Software
+- [ ] Make Node Optional
+- [ ] Make Laravel/Composer Optional
+- [ ] Make PHP Optional
+- [ ] Add React Support
+- [ ] Add Ruby Support (via RVM)
+- [ ] Add Python Support (via virtualenv(Optional), pipenv(Optional), & pyenv)
 
-# Server Support
-[] Add Apache Support
+### Server Support
+- [ ] Add Apache Support
 
-# Misc
-[] Ability to pre-load all variables
+### Misc
+- [ ] Ability to pre-load all variables
 
-### Can be used to deploy and setup a Laravel application via SSH
+---
+
+## Used to deploy and setup a Laravel application via SSH
 - 1.1) Git clone the setup scripts `git clone https://github.com/makedirectory/aws-ubuntu-18-04-laravel-setup aws-ubuntu-18-04-laravel-setup` OR simply copy and paste the scripts into the terminal and save using vi or nano.
 **Save these scripts in ~/aws-ubuntu-18-04-laravel-setup**
 - 1.2) run `bash setup.sh`
