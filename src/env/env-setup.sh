@@ -51,6 +51,28 @@ else
     printf "\nSkipping MongoDB ENV Setup"
 fi
 
+# Get Sentry DSN
+echo -n "Would you like to setup Sentry Error Reporting? - Y or N: "
+read SENTRYRESPONSE
+SENTRYRESPONSE=`echo $SENTRYRESPONSE | tr "[:lower:]" "[:upper:]"`
+if [ $SENTRYRESPONSE == 'Y' ]; then
+    echo -n "What is the SENTRY LARAVEL DSN? "
+    read SENTRYDSN
+    echo -n "Would you like to use $SENTRYDSN? - Y or N: "
+    read SENTRYDSNANSWER
+    SENTRYDSNANSWER=`echo $SENTRYDSNANSWER | tr "[:lower:]" "[:upper:]"`
+    until [ $SENTRYDSNANSWER == 'Y' ]; do
+        echo -n "What is the SENTRY LARAVEL DSN? "
+        read SENTRYDSN
+        echo -n "Would you like to use $SENTRYDSN? - Y or N: "
+        read SENTRYDSNANSWER
+        SENTRYDSNANSWER=`echo $SENTRYDSNANSWER | tr "[:lower:]" "[:upper:]"`
+    done
+    echo "SENTRY_LARAVEL_DSN Set"
+else
+    printf "\nSkipping Sentry ENV Setup"
+fi
+
 # Get AWS S3 Variables
 echo -n "Would you like to setup an AWS S3 Bucket? - Y or N: "
 read ADDAWSS3RESPONSE
@@ -118,6 +140,21 @@ else
     printf "\nSkipping MongoDB ENV Setup"
 fi
 
+# Adds Sentry Error Reporting
+if [ $SENTRYRESPONSE == 'Y' ]; then
+    echo "
+    SENTRYDSN=$SENTRYDSN
+    " >> /var/www/"$SUBDOMAIN""$DOMAIN".com/.env
+    RESULT=$?
+    if [ "$RESULT" -eq 0 ]; then
+        printf "\nSentry Error Reporting to .env\n"
+    else
+        printf "\nFailed to add entry Error Reporting to .env\n"
+    fi
+else
+    printf "\nSkipping Sentry Error Reporting ENV Setup"
+fi
+
 # Adds AWS S3 Bucket
 if [ $ADDAWSS3RESPONSE == 'Y' ]; then
     echo "
@@ -156,7 +193,7 @@ else
     printf "\nSkipping AWS SES Keys ENV Setup"
 fi
 
-# Adds MongoDB
+# Adds Twilio Keys
 if [ $ADDTWILIORESPONSE == 'Y' ]; then
     echo "
 

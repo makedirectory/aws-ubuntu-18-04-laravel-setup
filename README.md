@@ -5,7 +5,7 @@ Linux NGINX MongoDB(Optional) PHP Server
 ##  RoadMap
 
 ### Reporting
-- [ ] Add Sentury Support
+- [x] Add Sentury Support
 - [ ] Add SPLUNK Support
 
 ### Databases
