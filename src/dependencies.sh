@@ -116,7 +116,7 @@ else
     printf "\nCertbot Install Failed\n"
 fi
 
-# Restart php and nginx
+# Restart PHP and NGINX
 sudo systemctl restart php7.3-fpm
 RESULT=$?
 if [ "$RESULT" -eq 0 ]; then

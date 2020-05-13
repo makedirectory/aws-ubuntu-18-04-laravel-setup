@@ -23,7 +23,6 @@ echo -n "Would you like to setup a Subdomain? - Y or N: "
 read SETSUBDOMAINRESPONSE
 SETSUBDOMAINRESPONSE=`echo $SETSUBDOMAINRESPONSE | tr "[:lower:]" "[:upper:]"`
 if [ $SETSUBDOMAINRESPONSE == 'Y' ]; then
-    # TODO: Add '.' behind Sudmain if used
     echo -n "Enter Your Subdomain: "
     read SUBDOMAIN
     SUBDOMAIN=`echo $SUBDOMAIN | tr "[:upper:]" "[:lower:]"`

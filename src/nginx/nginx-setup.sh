@@ -5,10 +5,14 @@ printf "\nLets configure NGINX\n"
 sudo rm /etc/nginx/sites-available/default
 sudo cp ~/aws-ubuntu-18-04-laravel-setup/nginx_default /etc/nginx/sites-available/default
 
+# Replaces Subdomain and Domain in defult file with Variables
+# This needs to be tested
 sudo sed -i s/SUBDOMAIN/${SUBDOMAIN}/g /etc/nginx/sites-available/default
 sudo sed -i s/DOMAIN/${DOMAIN}/g /etc/nginx/sites-available/default
 
 cat /etc/nginx/sites-available/default
+
+# Copies configuration files into place, link, & enable
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/"$SUBDOMAIN""$DOMAIN".com
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/

@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Adding SSH Key for Github
-echo -n "Have you created an SSH key (for Github Repo Access)? - Y or N: "
+echo -n "Continue to create an SSH key (for Github Repo Access)? - Y or N: "
 read SSHANSWER
 SSHANSWER=`echo $SSHANSWER | tr "[:lower:]" "[:upper:]"`
 

@@ -3,8 +3,7 @@
 ### Adding Repo
 
 # Declaring Github UserName
-# TODO: Make this more clear - asking for username as it appears in a URL
-echo -n "What is your GitHub User Name?: "
+echo -n "What is your GitHub User Name as it appears in a URL?: "
 read GHUSER
 GHUSER=`echo $GHUSER | tr "[:upper:]" "[:lower:]"`
 echo "Username is:" $GHUSER
@@ -12,7 +11,7 @@ echo -n "Is this correct? - Y or N: "
 read GHUSERRESPONSE
 GHUSERRESPONSE=`echo $GHUSERRESPONSE | tr "[:lower:]" "[:upper:]"`
 until [ $GHUSERRESPONSE == 'Y' ]; do
-    echo -n "What is your GitHub User Name?: "
+    echo -n "What is your GitHub User Name as it appears in a URL?: "
     read GHUSER
     GHUSER=`echo $GHUSER | tr "[:upper:]" "[:lower:]"`
     echo "Username is:" $GHUSER
@@ -39,7 +38,7 @@ until [ $REPORESPONSE == 'Y' ]; do
     REPORESPONSE=`echo $REPORESPONSE | tr "[:lower:]" "[:upper:]"`
 done
 
-# TODO: Add Repo Variable
+# TODO: Add other git services ie: Bitbucket
 printf "\nAdd Repo\n"
 sudo chmod 700 ~/.ssh/id_rsa
 sudo chmod 700 ~/.ssh/id_rsa.pub
