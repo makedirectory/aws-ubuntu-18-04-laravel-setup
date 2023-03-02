@@ -1,3 +1,5 @@
+**This project is no longer actively maintained.**
+
 # aws-ubuntu-18-04-laravel-setup
 
 Linux NGINX MongoDB(Optional) PHP Server
